@@ -42,10 +42,10 @@ private slots:
 
     void on_exec_clicked();
 
-    void on_process_error(QProcess::ProcessError);
+    void onProcessError(QProcess::ProcessError);
     void on_finished(int code);
-    void on_process_stdout();
-    void on_process_stderr();
+    void onProcessStdout();
+    void onProcessStderr();
 
     void on_action_About_triggered();
 

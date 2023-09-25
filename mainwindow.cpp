@@ -124,17 +124,17 @@ void MainWindow::shellAppend(QString color, QString text)
     statusBar()->showMessage(text.split('\n').last());
 }
 
-void MainWindow::on_process_stderr()
+void MainWindow::onProcessStderr()
 {
     shellAppend("red", slave->readAllStandardError());
 }
 
-void MainWindow::on_process_stdout()
+void MainWindow::onProcessStdout()
 {
     shellAppend("black", slave->readAllStandardOutput());
 }
 
-void MainWindow::on_process_error(QProcess::ProcessError)
+void MainWindow::onProcessError(QProcess::ProcessError)
 {
     QProcess *process = qobject_cast<QProcess*>(sender());
     QMessageBox error(this);
@@ -231,9 +231,9 @@ void MainWindow::on_exec_clicked()
     ui->controls->setEnabled(false);
     slave=new QProcess(this);
     connect(slave,SIGNAL(finished(int)),this,SLOT(on_finished(int)));
-    connect(slave, SIGNAL(error(QProcess::ProcessError)), this, SLOT(on_process_error(QProcess::ProcessError)));
-    connect(slave, SIGNAL(readyReadStandardOutput()), this, SLOT(on_process_stdout()));
-    connect(slave, SIGNAL(readyReadStandardError()), this, SLOT(on_process_stderr()));
+    connect(slave, SIGNAL(errorOccurred(QProcess::ProcessError)), this, SLOT(onProcessError(QProcess::ProcessError)));
+    connect(slave, SIGNAL(readyReadStandardOutput()), this, SLOT(onProcessStdout()));
+    connect(slave, SIGNAL(readyReadStandardError()), this, SLOT(onProcessStderr()));
 
     qDebug() << "Executing" << cmd << args;
     slave->start(cmd, args, QProcess::ReadWrite|QProcess::Unbuffered);
