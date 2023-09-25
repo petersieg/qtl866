@@ -1,7 +1,7 @@
 %define unpackaged_files_terminate_build 1
 
 Name: qtl866
-Version: 0
+Version: 1.0.0
 Release: alt2.git1173c3e0
 
 Summary: GUI driver for minipro EPROM/Device programmer software
@@ -41,7 +41,7 @@ install -v -p -m 655 -D ./binhexedit %buildroot%_bindir/binhexedit
 %_bindir/binhexedit
 
 %changelog
-* Mon Sep 25 2023 Aleksey Saprunov <sav@altlinux.org> 0-alt2.git1173c3e0
+* Mon Sep 25 2023 Aleksey Saprunov <sav@altlinux.org> 1.0.0-alt2.git1173c3e0
 - Fixed commit history
 
 * Tue Feb 10 2023 Aleksey Saprunov <sav@altlinux.org> 0-alt1.git1173c3e0
