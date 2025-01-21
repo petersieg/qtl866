@@ -1,4 +1,8 @@
-Jan 2025: Quick hack to test 74 TTL chips implemented in:
+Jan 2025: Quick hack to test 74 TTL chips. 
+
+Edited devices.h to change all entries with 74HC (LS)153 -> 74153
+
+Implemented in:
 
 ```
 void MainWindow::on_exec_clicked()
