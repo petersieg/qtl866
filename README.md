@@ -1,3 +1,18 @@
+Jan 2025: Quick hack to test 74 TTL chips implemented in:
+
+```
+void MainWindow::on_exec_clicked()
+{
+...
+    if (devname.toStdString().rfind("74", 0) == 0) { // pos=0 limits the search to the prefix
+        // devname starts with prefix "74"
+        args << "-T"; // testing devname device
+
+    }
+    else {
+...
+```
+
 qtl866 - GUI driver for minipro EPROM/Device programmer software
     See also https://github.com/vdudouyt/minipro
     Copyright (C) 2014  Al Williams al.williams@awce.com
