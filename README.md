@@ -15,6 +15,13 @@ void MainWindow::on_exec_clicked()
     }
     else {
 ...
+
+and:
+void MainWindow::shellAppend(QString color, QString text)
+{
+    text = text.replace(QRegExp("\\x001b\\[0m"), " "); // this is needed for logic table output at testing 74 TTL ICs using ESC[0m for spacing
+    text = text.replace(QRegExp("\\x001b\\[[^A-Z]*[A-Z]"), "\n"); // this formattes the progress percentage output line by line
+
 ```
 
 qtl866 - GUI driver for minipro EPROM/Device programmer software
