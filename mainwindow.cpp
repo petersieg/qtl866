@@ -117,7 +117,8 @@ void MainWindow::on_finished(int code)
 
 void MainWindow::shellAppend(QString color, QString text)
 {
-    text = text.replace(QRegExp("\\x001b\\[[^A-Z]*[A-Z]"), "\n");
+    text = text.replace(QRegExp("\\x001b\\[0m"), " "); // this is needed for logic table output at testing 74 TTL ICs using ESC[0m for spacing
+    text = text.replace(QRegExp("\\x001b\\[[^A-Z]*[A-Z]"), "\n"); // this formattes the progress percentage output line by line
     QTextCursor cursor = ui->shell->document()->rootFrame()->lastCursorPosition();
     cursor.insertHtml(getColoredText(color, text));
     ui->shell->setTextCursor(cursor);
@@ -183,7 +184,6 @@ void MainWindow::on_exec_clicked()
     if (devname.toStdString().rfind("74", 0) == 0) { // pos=0 limits the search to the prefix
         // devname starts with prefix "74"
         args << "-T"; // testing devname device
-
     }
     else {
     if (ui->ignoreid->isChecked()) args << "-y";
