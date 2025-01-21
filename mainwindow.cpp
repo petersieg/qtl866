@@ -179,6 +179,13 @@ void MainWindow::on_exec_clicked()
     // Build argument string
     args << "-p";
     args << devname;
+
+    if (devname.toStdString().rfind("74", 0) == 0) { // pos=0 limits the search to the prefix
+        // devname starts with prefix "74"
+        args << "-T"; // testing devname device
+
+    }
+    else {
     if (ui->ignoreid->isChecked()) args << "-y";
     if (!ui->erasechip->isChecked()) args << "-e";
     if (ui->useisp->isChecked()) args << "-i";
@@ -225,12 +232,12 @@ void MainWindow::on_exec_clicked()
             QMessageBox::critical(this,tr("Error"),tr("File not found or not readable"));
         }
     }
+    } // devname.toStdString().rfind
     // TODO: Could add write all and do in 3 operations
-
 
     ui->controls->setEnabled(false);
     slave=new QProcess(this);
-    connect(slave,SIGNAL(finished(int)),this,SLOT(on_finished(int)));
+    connect(slave, SIGNAL(finished(int)),this,SLOT(on_finished(int)));
     connect(slave, SIGNAL(errorOccurred(QProcess::ProcessError)), this, SLOT(onProcessError(QProcess::ProcessError)));
     connect(slave, SIGNAL(readyReadStandardOutput()), this, SLOT(onProcessStdout()));
     connect(slave, SIGNAL(readyReadStandardError()), this, SLOT(onProcessStderr()));
