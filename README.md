@@ -8,10 +8,9 @@ Implemented in:
 void MainWindow::on_exec_clicked()
 {
 ...
-    if (devname.toStdString().rfind("74", 0) == 0) { // pos=0 limits the search to the prefix
-        // devname starts with prefix "74"
+    if ((devname.toStdString().rfind("74", 0) == 0) || (devname.toStdString().rfind("40", 0) == 0)) { // pos=0 limits the search to the prefix
+        // devname starts with prefix "74" for TTL logic chips OR "40" for CMOS logic chips
         args << "-T"; // testing devname device
-
     }
     else {
 ...
