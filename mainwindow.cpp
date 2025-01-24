@@ -201,8 +201,10 @@ void MainWindow::on_exec_clicked()
 
     if (reading)
         args << "-r";
-    else
+    else { // writing
+        if (ui->ignsize->isChecked()) args << "-s"; // ignore file size wrong
         args << "-w";
+    }
     args << ui->filename->text();
     testfile=new QFileInfo(ui->filename->text());
     if (reading)

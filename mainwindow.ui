@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>607</width>
-    <height>528</height>
+    <width>618</width>
+    <height>711</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,6 +45,30 @@
        <property name="bottomMargin">
         <number>0</number>
        </property>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Fi&amp;le</string>
+         </property>
+         <property name="buddy">
+          <cstring>filename</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="editbtn">
+         <property name="text">
+          <string>&amp;Edit</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QPushButton" name="browse">
+         <property name="text">
+          <string>&amp;Browse</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="3">
         <widget class="QCheckBox" name="useisp">
          <property name="toolTip">
@@ -52,6 +76,52 @@
          </property>
          <property name="text">
           <string>Use &amp;ISP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QLineEdit" name="filename">
+         <property name="toolTip">
+          <string>Select file. Known file types for code and data are .bin, .hex, and .srec. Fuses are in .txt files.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="device">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Enter or select device name (case sensitive)</string>
+         </property>
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCheckBox" name="ignoreid">
+         <property name="toolTip">
+          <string>Ignore chip ID mismatch and proceed anyway</string>
+         </property>
+         <property name="text">
+          <string>Ignore ID</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="exec">
+         <property name="toolTip">
+          <string>Begin selected operation</string>
+         </property>
+         <property name="text">
+          <string>E&amp;xecute</string>
+         </property>
+         <property name="default">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -65,7 +135,7 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1" colspan="3">
+       <item row="2" column="1" colspan="3">
         <widget class="QGroupBox" name="mode">
          <property name="title">
           <string>Operation</string>
@@ -142,73 +212,10 @@
          </layout>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QCheckBox" name="ignoreid">
-         <property name="toolTip">
-          <string>Ignore chip ID mismatch and proceed anyway</string>
-         </property>
+       <item row="1" column="2">
+        <widget class="QCheckBox" name="ignsize">
          <property name="text">
-          <string>Ignore ID</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="exec">
-         <property name="toolTip">
-          <string>Begin selected operation</string>
-         </property>
-         <property name="text">
-          <string>E&amp;xecute</string>
-         </property>
-         <property name="default">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1" colspan="2">
-        <widget class="QLineEdit" name="filename">
-         <property name="toolTip">
-          <string>Select file. Known file types for code and data are .bin, .hex, and .srec. Fuses are in .txt files.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Fi&amp;le</string>
-         </property>
-         <property name="buddy">
-          <cstring>filename</cstring>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QComboBox" name="device">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>1</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="toolTip">
-          <string>Enter or select device name (case sensitive)</string>
-         </property>
-         <property name="editable">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QPushButton" name="editbtn">
-         <property name="text">
-          <string>&amp;Edit</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="QPushButton" name="browse">
-         <property name="text">
-          <string>&amp;Browse</string>
+          <string>IgnSize</string>
          </property>
         </widget>
        </item>
@@ -222,7 +229,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>607</width>
+     <width>618</width>
      <height>25</height>
     </rect>
    </property>
