@@ -17,6 +17,11 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="3" column="0" colspan="2">
      <widget class="QTextEdit" name="shell">
+      <property name="font">
+       <font>
+        <family>DejaVu Sans Mono</family>
+       </font>
+      </property>
       <property name="toolTip">
        <string>Output from CLI tool</string>
       </property>
@@ -218,7 +223,7 @@
      <x>0</x>
      <y>0</y>
      <width>607</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
