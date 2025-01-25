@@ -250,8 +250,9 @@ void MainWindow::on_exec_clicked()
 
 void MainWindow::on_action_About_triggered()
 {
-    QMessageBox::information(this,tr("About"),tr("qtl866 V0.3 Copyright (c) 2014 by Al Williams http://www.awce.com.\n"
-                                                 "This program comes with ABSOLUTELY NO WARRANTY. "
+    QMessageBox::information(this,tr("About"),tr("qtl866 V0.4 Copyright (c) 2014 by Al Williams http://www.awce.com.\n"
+                                                 "Minor changes to allow logic testing and ignore size checkbox by P. Sieg Jan.2025\n"
+                                                 "This program comes with ABSOLUTELY NO WARRANTY.\n"
                                                  "This is free software, and you are welcome to redistribute it under certain conditions.\n"
                                                  "See the file COPYING for more information."
                                                  ));
