@@ -1,4 +1,4 @@
-Jan 2025: Quick hack to test 74 TTL chips. 
+Jan 2025: Quick hack to test 74xx TTL and 40xx CMOS logic chips. 
 
 Edited devices.h to change all entries with 74HC (LS)153 -> 74153
 
