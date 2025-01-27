@@ -181,8 +181,9 @@ void MainWindow::on_exec_clicked()
     args << "-p";
     args << devname;
 
-    if ((devname.toStdString().rfind("74", 0) == 0) || (devname.toStdString().rfind("40", 0) == 0)) { // pos=0 limits the search to the prefix
-        // devname starts with prefix "74" for TTL logic chips OR "40" for CMOS logic chips
+    if ((devname.toStdString().rfind("74", 0) == 0)  || (devname.toStdString().rfind("140", 0) == 0) ||
+        (devname.toStdString().rfind("40", 0) == 0)  || (devname.toStdString().rfind("45", 0) == 0)) { // pos=0 limits the search to the prefix
+        // devname starts with prefix "74" for TTL logic chips OR "140" /"40" / "45" for CMOS logic chips
         args << "-T"; // testing devname device
     }
     else {
