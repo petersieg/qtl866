@@ -1,4 +1,11 @@
-Jan 2025: Quick hack to test 74xx TTL and 40xx CMOS logic chips. 
+Jan 2025: Quick hack to test 74xx TTL and 40xx/45xx CMOS logic chips. 
+Using TL866II+ and minipro 0.7.2 under Bodhi Linux.
+Tested 25Q08, 93C56, 27C256, some logic chips - ok
+However: atmega328p from arduino uno was bricked, becaus of minipro issue with writing fuses.
+
+    So use at your own risk! 
+    Always read out chips first and make sure readout is complete and correct.
+    Always use a spare chip to test first and make sure everything runs as expected.
 
 Edited devices.h to change all entries with 74HC (LS)153 -> 74153
 
