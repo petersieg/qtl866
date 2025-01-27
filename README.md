@@ -3,7 +3,7 @@ Using TL866II+ and minipro 0.7.2 under Bodhi Linux.
 Tested 25Q08, 93C56, 27C256, some logic chips - ok
 However: atmega328p from arduino uno was bricked, becaus of minipro issue with writing fuses.
 
-    ## So use at your own risk! 
+    ==> So use at your own risk! <==
     Always read out chips first and make sure readout is complete and correct.
     Always use a spare chip to test first and make sure everything runs as expected.
 
